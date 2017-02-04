@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: '.dashboard-component',
+  selector: 'dashboard-component',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })

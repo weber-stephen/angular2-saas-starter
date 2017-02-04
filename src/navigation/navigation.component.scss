@@ -1,0 +1,16 @@
+@import '../styles/theme';
+
+.navigation-component {
+    background-color: $navigation-color;
+
+    &.sidebar {
+        a.nav-link{
+            color: $off-white-color;
+            &.active {
+                color: #fff;
+                background-color: $primary;
+            }
+        }
+    }
+
+}

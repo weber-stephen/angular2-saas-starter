@@ -1,0 +1,28 @@
+<nav class="toolbar-component navbar navbar-toggleable-sm fixed-top z-index-3">
+  <button class="navbar-toggler navbar-toggler-right hidden-md-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Dashboard</a>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav" *ngIf="!isUserLoggedIn()">
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/login']">Login</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/signup']">Signup</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0" *ngIf="isUserLoggedIn()" (ngSubmit)="doSearchSubmit()">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <ul class="navbar-nav" *ngIf="isUserLoggedIn()">
+      <li class="nav-item" >
+        <a class="nav-link" (click)="doLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

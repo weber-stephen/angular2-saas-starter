@@ -1,0 +1,7 @@
+<div class="app-component container-fluid">
+    <toolbar-component></toolbar-component>
+    <div class="row">
+    	<navigation-component *ngIf="isUserLoggedIn()"></navigation-component>
+    	<main [ngClass]="{'offset-sm-3 offset-md-3':isUserLoggedIn()}" class="col-sm-9 col-md-9 pt-3"><router-outlet></router-outlet></main>
+    </div>
+</div>

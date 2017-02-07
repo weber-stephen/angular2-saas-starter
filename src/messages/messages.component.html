@@ -4,14 +4,17 @@
       <input #userFilterInput class="search-input" placeholder="Search..." />
     </div>
     <ul class="list-group" *ngIf="users.length > 0">
-      <li class="list-group-item" [ngClass]="{'active':selectedUser.id === user.id}" *ngFor="let user of users | userfilter : '' : userFilterInput.value" (click)="onSelectUser(user)">{{user.firstName}} {{user.lastName}}</li>
+      <li class="list-group-item" [ngClass]="{'active':selectedUser.id === user.id}" *ngFor="let user of users | userfilter : '' : userFilterInput.value" (click)="onSelectUser(user)">
+        <img [src]="'assets/profiles/'+user.profile+'.jpg'" class="avatar" [alt]="user.from_name" />
+        <div class="status-circle {{user.status}}"></div>
+      {{user.from_first_name}} {{user.from_last_name}}</li>
     </ul>
   </div>
   <div class="col-8">
     <section class="message-container pt-4" *ngIf="selectedUser.id">
 
       <div class="message-list row" >
-        <div *ngFor="let item of shownMessages" class="message" [ngClass]="{'right':item.from_id === selectedUser.id,'left':item.from_id != selectedUser.id}" [@flyInOut]="item">
+        <div *ngFor="let item of shownMessages" class="message" [ngClass]="{'right':item.from_id === selectedUser.id,'left':item.from_id != selectedUser.id}" [@enterIn]="item">
           <div class="message-text">
             {{item.m}}
           </div>

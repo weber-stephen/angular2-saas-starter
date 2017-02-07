@@ -18,7 +18,7 @@ import * as _ from 'lodash';
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.scss'],
   animations: [
-    trigger('flyInOut', [
+    trigger('enterIn', [
       state('in', style({transform: 'translateX(0)'})),
       transition('void => *', [
         style({
@@ -93,7 +93,7 @@ export class MessagesComponent implements OnInit, OnDestroy {
     let eventObservable = Observable.fromEvent(this.userFilterInput.nativeElement, 'keyup')
     eventObservable.subscribe();
     
-    this.userService.getAll()
+    this.messageService.getAll()
     .subscribe((result) => {
       // console.log(result);
       this.users = result;

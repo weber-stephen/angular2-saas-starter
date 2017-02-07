@@ -1,0 +1,97 @@
+[
+  {
+    "id":2,
+    "profile":"profile2",
+    "from_first_name":"Jack",
+    "from_last_name":"Daniels",
+    "from_id":2,
+    "status":"online",
+    "last_message":"Hey there! Wondering if you want to get some lunch together?",
+    "timestamp":"now",
+    "unread":true,
+    "messages":[
+      {
+        "from_id":2,
+        "timestamp":"2015-01-31T12:30:56.000Z",
+        "m":"Hey there! I just started today, heard we are going to be working together and wanted to get lunch with you."
+      },
+      {
+        "from_id":1,
+        "timestamp":"2015-01-31T12:34:56.000Z",
+        "m":"Sure! Lets do lunch tomorrow."
+      }
+    ]
+  },
+  {
+    "id":3,
+    "profile":"profile3",
+    "from_first_name":"Josie",
+    "from_last_name":"Walker",
+    "from_id":3,
+    "status":"online",
+    "last_message":"Where can I download that template you made?",
+    "timestamp":"2 minutes ago",
+    "unread":true
+  },
+  {
+    "id":4,
+    "profile":"profile4",
+    "from_first_name":"Leonidas",
+    "from_last_name":"Spartan",
+    "from_id":4,
+    "status":"offline",
+    "last_message":"This UI Rocks! Thanks for showing me. I am going to use this on so many projects.",
+    "timestamp":"4 minutes ago",
+    "unread":true
+  },
+  {
+    "id":5,
+    "profile":"profile5",
+    "from_first_name":"Pandora",
+    "from_last_name":"Box",
+    "from_id":5,
+    "status":"away",
+    "last_message":"Client is happy. Thank goodness! Your amazing. Owe you a wiskey sour.",
+    "timestamp":"6 minutes ago"
+  },
+  {
+    "id":6,
+    "profile":"profile6",
+    "from_first_name":"Jamie",
+    "from_last_name":"Fraser",
+    "from_id":6,
+    "status":"offline",
+    "last_message":"Some of your designs are pretty good, can we use you on a project I am working on?",
+    "timestamp":"1 day ago"
+  },
+  {
+    "id":7,
+    "profile":"profile7",
+    "from_first_name":"Jessica",
+    "from_last_name":"Rabbit",
+    "from_id":7,
+    "status":"offline",
+    "last_message":"Have you seen that new TV show?! Its amazing! Lets get together and watch it at lunch.",
+    "timestamp":"2 days ago"
+  },
+  {
+    "id":8,
+    "profile":"profile9",
+    "from_first_name":"Emma",
+    "from_last_name":"Watsup",
+    "from_id":8,
+    "status":"offline",
+    "last_message":"I don't want other people to decide who I am. I want to decide that for myself.",
+    "timestamp":"2 days ago"
+  },
+  {
+    "id":9,
+    "profile":"profile10",
+    "from_first_name":"Marlon",
+    "from_last_name":"Brandino",
+    "from_id":9,
+    "status":"offline",
+    "last_message":"I don't want other people to decide who I am. I want to decide that for myself.",
+    "timestamp":"2 days ago"
+  }
+]

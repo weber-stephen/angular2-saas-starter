@@ -1,0 +1,26 @@
+[
+   {
+      "id":1,
+      "message":"Awesome!"
+   },
+   {
+      "id":2,
+      "message":"Hey! I wanna ask you a question, do you mind?"
+   },
+   {
+      "id":3,
+      "message":"So...wanna go out sometime?"
+   },
+   {
+      "id":4,
+      "message":"Do you like Netflix?"
+   },
+   {
+      "id":5,
+      "message":"What are you doing this Saturday?"
+   },
+   {
+      "id":6,
+      "message":"I'm bored!"
+   }
+]

@@ -13,12 +13,17 @@ import { AlertModule } from 'ng2-bootstrap';
 //Storage
 import { Ng2Webstorage } from 'ng2-webstorage';
 
+//Utilities
+import * as _ from 'lodash';
+
 //Modules
 import { NAVIGATION_MODULE } from '../navigation';
 import { TOOLBAR_MODULE } from '../toolbar';
 import { LOGIN_MODULE } from '../login';
 import { SIGNUP_MODULE } from '../signup';
 import { DASHBOARD_MODULE } from '../dashboard';
+import { MESSAGES_MODULE } from '../messages';
+import { USERS_MODULE } from '../users';
 import { SERVICES_MODULE } from '../services';
 
 import { AuthGuard } from './auth-guard';
@@ -28,7 +33,9 @@ const BIQ_MODULES = [
   TOOLBAR_MODULE,
   LOGIN_MODULE,
   SIGNUP_MODULE,
-  DASHBOARD_MODULE
+  DASHBOARD_MODULE,
+  MESSAGES_MODULE,
+  USERS_MODULE
 ];
 
 @NgModule({

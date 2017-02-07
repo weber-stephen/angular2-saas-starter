@@ -1,3 +1,23 @@
 .toolbar-component {
     background-color: #fff;
+
+    .toolbar-search-input {
+        padding-left: 25%;
+
+        .input-group-addon {
+            border: 0px;
+            background: none;
+        }
+
+        input {
+            box-sizing: border-box;
+            border: none;
+            box-shadow: none;
+            outline: 0;
+            background: 0 0;
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+
 }

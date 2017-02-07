@@ -1,0 +1,37 @@
+<div class="messages-component row">
+  <div class="col-4 user-list" [ngStyle]="{'max-height':scrollHeight}">
+    <div class="search-input-wrapper">
+      <input #userFilterInput class="search-input" placeholder="Search..." />
+    </div>
+    <ul class="list-group" *ngIf="users.length > 0">
+      <li class="list-group-item" [ngClass]="{'active':selectedUser.id === user.id}" *ngFor="let user of users | userfilter : '' : userFilterInput.value" (click)="onSelectUser(user)">{{user.firstName}} {{user.lastName}}</li>
+    </ul>
+  </div>
+  <div class="col-8">
+    <section class="message-container pt-4" *ngIf="selectedUser.id">
+
+      <div class="message-list row" >
+        <div *ngFor="let item of shownMessages" class="message" [ngClass]="{'right':item.from_id === selectedUser.id,'left':item.from_id != selectedUser.id}" [@flyInOut]="item">
+          <div class="message-text">
+            {{item.m}}
+          </div>
+        </div>
+      </div>
+
+      <div class="message-input-container row align-self-end" >
+
+        <div class="col-8">
+          <textarea id="message-input" [(ngModel)]="messageData.message" ></textarea>
+        </div>
+
+        <div class="col-4">
+          <button id="send-message-btn" class="btn btn-lg btn-primary btn-block rounded" (click)="onSendMessage()" >
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+</div>

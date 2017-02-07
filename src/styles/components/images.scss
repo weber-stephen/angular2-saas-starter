@@ -1,0 +1,13 @@
+.img-circle {
+    border-radius: 50%;
+}
+
+.avatar {
+    max-height: 50px;
+    border-radius: 50%;
+
+    &.sm {
+        max-height: 40px;
+    }
+
+}

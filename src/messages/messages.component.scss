@@ -1,0 +1,155 @@
+.messages-component {
+    background-color: #fff;
+    position: relative;
+
+    .user-list {
+        padding: 0px;
+        overflow-y: scroll;
+        border-right: 1px solid rgba(0, 0, 0, 0.125);
+
+        .search-input-wrapper {
+            padding-top: 10px;
+            // padding-bottom: 10px;
+            margin: 15px;
+
+            input {
+                width: 100%;
+            }
+
+        }
+
+        .list-group {
+
+            .list-group-item:first-child {
+                border-radius: 0;
+            }
+
+            .list-group-item {
+                border: 0;
+            }
+
+        }
+
+    }
+
+    .message-container {
+        max-height: 100%;
+
+        .message-input-container {
+            padding-top: 10px;
+            min-height: 45px;
+
+            width: 100%;
+            position: absolute;
+            bottom: 71px;
+
+            #message-input {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+
+                -webkit-order: 2;
+                -ms-flex-order: 2;
+                order: 2;
+                display: block;
+                margin-top: 0;
+                background: 0 0;
+                padding: 2px 2px 1px;
+                line-height: 28px;
+                height: 32px;
+                -ms-flex-preferred-size: 28px;
+                border-radius: 0;
+                width: 100%;
+                box-sizing: border-box;
+                float: left;
+
+                border: 1px solid #ccc;
+                border-radius: 8px;
+
+                resize: none;
+                overflow: hidden;
+
+                min-height: 28px;
+                height: 100%;
+            }
+
+            #send-message-btn {
+                height: 60px;
+            }
+
+        }
+
+        .message-list {
+          min-height: calc(100% - (220px));
+          height: calc(100% - (220px));
+          overflow-y: scroll;
+
+          /* Messages baloon */
+          .message {
+            margin: 10px 0;
+            overflow: hidden;
+            opacity: 1;
+            margin-top: 0px;
+            width: 100%;
+
+            // -webkit-transition: 1s;
+            // transition: 1s;
+            // opacity: 0;
+            // margin-top: 100px;
+            // animation-delay: 0.2s;
+
+            /*
+            &.ng-enter {
+              -webkit-transition: 1s;
+              transition: 1s;
+              opacity: 0;
+              margin-top: 100px;
+              animation-delay: 0.2s;
+            }
+            &.ng-enter-active {
+              opacity: 1;
+              margin-top: 0px;
+            }
+            */
+        
+            &.left:before, &.right:before {
+              position: absolute;
+              bottom: 0;
+              width: 16px;
+              height: 32px;
+              border-color: inherit;
+              border-style: solid;
+              border-radius: 50%;
+              border-width: 0 16px;
+              z-index: -1;
+            }
+
+            .message-text {
+              padding: 10px 20px;
+              float: right;
+              clear: both;
+              border-radius: 25px;
+              position: relative;
+              margin-bottom: 1px;
+            }
+            
+            &.left .message-text {
+              margin-right: 70px;
+              margin-left: 20px;
+              background-color: #e5e5ea;
+              float: left;
+            }
+            
+            &.right .message-text {
+              margin-left: 70px;
+              margin-right: 20px;
+              background-color: #10B7C6;
+              color: #fff;
+              float: right;
+            }
+
+          }
+
+        }
+    }
+
+}

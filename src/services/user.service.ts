@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
+import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
+
 import { User } from '../models/user.model';
 
 @Injectable()
 export class UserService {
-    constructor(private http: Http) { }
+    constructor(private http: Http, private storage:LocalStorageService) { }
 
     getAll() {
-        return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('/assets/api/users.json', this.jwt()).map((response: Response) => response.json());
     }
 
     getById(id: number) {
@@ -31,7 +33,7 @@ export class UserService {
 
     private jwt() {
         // create authorization header with jwt token
-        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        let currentUser = this.storage.retrieve('currentUser');
         if (currentUser && currentUser.token) {
             let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
             return new RequestOptions({ headers: headers });

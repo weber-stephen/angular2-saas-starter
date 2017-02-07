@@ -5,8 +5,8 @@
   <a class="navbar-brand" href="#">Dashboard</a>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
-    <ul class="navbar-nav mr-auto">
-    </ul>
+    <!-- <ul class="navbar-nav mr-auto">
+    </ul> -->
     <ul class="navbar-nav" *ngIf="!isUserLoggedIn()">
       <li class="nav-item" >
         <a class="nav-link" [routerLink]="['/login']">Login</a>
@@ -15,11 +15,15 @@
         <a class="nav-link" [routerLink]="['/signup']">Signup</a>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0" *ngIf="isUserLoggedIn()" (ngSubmit)="doSearchSubmit()">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline mt-2 mt-md-0 mr-auto" *ngIf="isUserLoggedIn()" (ngSubmit)="doSearchSubmit()">
+      <div class="toolbar-search-input input-group mb-2 mr-sm-2 mb-sm-0">
+        <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
+        <input type="text" class="form-control mr-sm-2" id="inlineFormInputGroup" placeholder="Search...">
+      </div>
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     </form>
     <ul class="navbar-nav" *ngIf="isUserLoggedIn()">
+      <li><img class="avatar sm" src="/assets/profiles/profile1.jpg">
       <li class="nav-item" >
         <a class="nav-link" (click)="doLogout()">Logout</a>
       </li>

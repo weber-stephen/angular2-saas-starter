@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
 
     ngOnDestroy() {
-
+      this.loginForm = null;
     }
 
 }

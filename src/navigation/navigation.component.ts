@@ -16,6 +16,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
 			route:'/'
 		},
 		{
+			label:'Messages',
+			route:'/messages'
+		},
+		{
 			label:'Users',
 			route:'/users'
 		}

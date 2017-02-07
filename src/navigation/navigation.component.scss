@@ -4,10 +4,14 @@
     background-color: $navigation-color;
 
     &.sidebar {
+        top: 34px;
+
         a.nav-link{
-            color: $off-white-color;
+            color: #fff;
+            opacity: 0.75;
+
             &.active {
-                color: #fff;
+                opacity: 1;
                 background-color: $primary;
             }
         }

@@ -1,0 +1,33 @@
+<div class="users-component row" #container>
+  <div class="col-4 user-list" [ngStyle]="{'max-height':scrollHeight}">
+    <div class="search-input-wrapper">
+      <input #userFilterInput class="search-input" placeholder="Search..." />
+    </div>
+    <ul class="list-group" *ngIf="users.length > 0">
+      <li class="list-group-item" [ngClass]="{'active':selectedUser.id === user.id}" *ngFor="let user of users | userfilter : '' : userFilterInput.value" (click)="onSelectUser(user)">{{user.firstName}} {{user.lastName}}</li>
+    </ul>
+  </div>
+  <div class="col-8">
+    <section class="user-details pt-4" *ngIf="selectedUser.firstName">
+
+      <form>
+
+        <h2>{{selectedUser.firstName}} {{selectedUser.lastName}}</h2>
+
+        <div class="form-group">
+          <label for="roleInput">Role</label>
+          <input type="text" class="form-control" id="roleInput" name="role" [(ngModel)]="selectedUser.role" placeholder="Role">
+        </div>
+
+        <div class="form-group">
+          <label for="emailInput">Email</label>
+          <input type="text" class="form-control" id="emailInput" name="email" [(ngModel)]="selectedUser.email" placeholder="Email">
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block rounded" type="submit">Save</button>
+
+      </form>
+
+    </section>
+  </div>
+</div>

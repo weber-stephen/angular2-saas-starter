@@ -5,7 +5,7 @@
     </div>
     <ul class="list-group" *ngIf="users.length > 0">
       <li class="list-group-item" [ngClass]="{'active':selectedUser.id === user.id}" *ngFor="let user of users | userfilter : '' : userFilterInput.value" (click)="onSelectUser(user)">
-        <img [src]="'assets/profiles/'+user.profile+'.jpg'" class="avatar" [alt]="user.from_name" />
+        <img [src]="'assets/img/profiles/'+user.profile+'.jpg'" class="avatar" [alt]="user.from_name" />
         <div class="status-circle {{user.status}}"></div>
       {{user.from_first_name}} {{user.from_last_name}}</li>
     </ul>

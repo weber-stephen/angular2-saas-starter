@@ -1,17 +1,21 @@
 <div class="login-component">
+  <div class="container">
+    <div class="card z-index-3">
+      <div class="logo"><img src="assets/img/Logo_Web_151x131.png"></div>
+      <form class="form-signin text-center" [formGroup]="loginForm" (ngSubmit)="doLogin()">
+        <h2 class="form-signin-heading">Login</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" formControlName="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" formControlName="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          
+        <div class="checkbox">
+          <input id="rememberme" formControlName="rememberme"  type="checkbox" value="remember-me"/>
+          <label for="rememberme">Remember Me</label>
+        </div>
 
-  <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="doLogin()">
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" formControlName="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" formControlName="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" formControlName="rememberme" value="remember-me"> Remember me
-      </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
-
+  </div>
 </div>

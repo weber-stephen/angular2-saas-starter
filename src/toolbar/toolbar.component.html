@@ -4,9 +4,19 @@
   </button>
   <a class="navbar-brand" href="#">Dashboard</a>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
-    <!-- <ul class="navbar-nav mr-auto">
-    </ul> -->
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+    <ul class="navbar-nav mr-auto hidden-xs-down"></ul>
+
+    <ul class="navbar-nav mr-auto hidden-sm-up" *ngIf="isUserLoggedIn()">
+      <li class="nav-item" *ngFor="let page of pages" [ngClass]="{'active': getCurrentRoute() === page.route }">
+        <a class="nav-link" [routerLink]="[page.route]">{{page.label}} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" (click)="doLogout()">Logout</a>
+      </li>
+    </ul>
+
     <ul class="navbar-nav" *ngIf="!isUserLoggedIn()">
       <li class="nav-item" >
         <a class="nav-link" [routerLink]="['/login']">Login</a>
@@ -15,13 +25,14 @@
         <a class="nav-link" [routerLink]="['/signup']">Signup</a>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0 mr-auto" *ngIf="isUserLoggedIn()" (ngSubmit)="doSearchSubmit()">
+    <search-autocomplete-component class="mt-2 mt-md-0 mr-auto"></search-autocomplete-component>
+    <!-- <form class="form-inline mt-2 mt-md-0 mr-auto" *ngIf="isUserLoggedIn()" (ngSubmit)="doSearchSubmit()">
       <div class="toolbar-search-input input-group mb-2 mr-sm-2 mb-sm-0">
         <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
         <input type="text" class="form-control mr-sm-2" id="inlineFormInputGroup" placeholder="Search...">
       </div>
-      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-    </form>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
     <ul class="navbar-nav" *ngIf="isUserLoggedIn()">
       <li><img class="avatar sm" src="/assets/img/profiles/profile1.jpg">
       <li class="nav-item" >

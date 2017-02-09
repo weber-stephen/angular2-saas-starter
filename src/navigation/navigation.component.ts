@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../services/authentication.service';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'navigation-component',
@@ -10,31 +11,21 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class NavigationComponent implements OnInit, OnDestroy {
   
-	pages:Array<any> = [
-		{
-			label:'Dashboard',
-			route:'/'
-		},
-		{
-			label:'Messages',
-			route:'/messages'
-		},
-		{
-			label:'Users',
-			route:'/users'
-		}
-	];
+	pages:Array<any> = [];
 
-	constructor(public router:Router, private auth:AuthenticationService) {
+	constructor(public router:Router, private authService:AuthenticationService, private navigationService:NavigationService) {
 
 	}
 
 	ngOnInit() {
-
+		this.navigationService.get()
+		.subscribe((result) => {
+			this.pages = result;
+		});
 	}
 
 	doLogout() {
-		this.auth.logout();
+		this.authService.logout();
 		this.router.navigate(['/login']);
 	}
 

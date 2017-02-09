@@ -1,0 +1,15 @@
+<div class="search-autocomplete-component" (clickOutside)="close()">
+  <form class="form-inline mt-2 mt-md-0 mr-auto" [formGroup]="searchForm" (ngSubmit)="doSearchSubmit()">
+    <div class="toolbar-search-input input-group mb-2 mr-sm-2 mb-sm-0">
+      <div class="input-group-addon search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+      <input type="text" class="form-control mr-sm-2" formControlName="searchTerm" #userFilterInput placeholder="Search..." >
+      <div class="suggestions" *ngIf="searchResults.length > 0 && showSuggestions" >
+        <ul>
+          <li *ngFor="let item of searchResults" (click)="onSelectedSearchResult($event,item)">
+            {{item.label}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</div>

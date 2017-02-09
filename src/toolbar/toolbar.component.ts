@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../services/authentication.service'
+import { AuthenticationService } from '../services/authentication.service';
+import { NavigationService } from '../services/navigation.service';
+
+import { SearchAutocompleteComponent } from './search-autocomplete/search-autocomplete.component';
 
 @Component({
   selector: 'toolbar-component',
@@ -10,16 +13,33 @@ import { AuthenticationService } from '../services/authentication.service'
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
   
-    constructor(public router:Router, private auth:AuthenticationService) {
+    pages:Array<any> = [];
+  
+    constructor(public router:Router, private auth:AuthenticationService, private navigationService:NavigationService) {
 
     }
 
     ngOnInit() {
 
+      this.navigationService.get()
+      .subscribe((result) => {
+        this.pages = result;
+      });
+
     }
 
     isUserLoggedIn() {
         return this.auth.getUser();
+    }
+
+    private getCurrentRoute() {
+      return this.router.url;
+    }
+
+    private onPageSelect(page:any) {
+
+      this.router.navigateByUrl(page.route);
+
     }
 
     doLogout() {

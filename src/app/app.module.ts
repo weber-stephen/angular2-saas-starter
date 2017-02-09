@@ -13,6 +13,12 @@ import { AlertModule } from 'ng2-bootstrap';
 //Storage
 import { Ng2Webstorage } from 'ng2-webstorage';
 
+//Typeahead - https://github.com/brinkjg/ng2-typeahead
+// import { Typeahead } from 'ng2-typeahead';
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
+
+import { ClickOutsideDirective } from '../toolbar/search-autocomplete/clickinside.directive';
+
 //Utilities
 import * as _ from 'lodash';
 
@@ -25,6 +31,7 @@ import { DASHBOARD_MODULE } from '../dashboard';
 import { MESSAGES_MODULE } from '../messages';
 import { USERS_MODULE } from '../users';
 import { SERVICES_MODULE } from '../services';
+import { PAGE_NOT_FOUND_MODULE } from '../pagenotfound';
 
 import { AuthGuard } from './auth-guard';
 
@@ -35,12 +42,14 @@ const BIQ_MODULES = [
   SIGNUP_MODULE,
   DASHBOARD_MODULE,
   MESSAGES_MODULE,
-  USERS_MODULE
+  USERS_MODULE,
+  PAGE_NOT_FOUND_MODULE
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    ClickOutsideDirective,
     BIQ_MODULES
   ],
   imports: [
@@ -52,6 +61,7 @@ const BIQ_MODULES = [
 
     //Libraries
     Ng2Webstorage,
+    Ng2AutoCompleteModule,
     AlertModule.forRoot()
 
   ],

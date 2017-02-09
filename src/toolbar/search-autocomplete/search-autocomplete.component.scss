@@ -1,0 +1,42 @@
+.search-autocomplete-component {
+    position: relative;
+    background-color: #F5F5F5;
+    padding: 5px;
+
+    .search-icon {
+        border: 0;
+        background-color: transparent;
+    }
+
+    .form-control {
+        border: 0;
+        padding-left: 0;
+        padding-bottom: 5px;
+        background-color: transparent;
+    }
+
+    .suggestions {
+        display: inline-block;
+        position: absolute;
+        top: 40px;
+        left: 30px;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+        border: 1px solid #efefef;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0px;
+
+            li {
+                cursor: pointer;
+                padding: 5px;
+            }
+
+        }
+
+    }
+
+}

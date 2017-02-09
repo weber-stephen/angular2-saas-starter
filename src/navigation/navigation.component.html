@@ -1,4 +1,4 @@
-<nav class="navigation-component sidebar col-sm-3 col-md-3 col-lg-2 hidden-xs-down bg-faded z-index-2">
+<nav class="navigation-component sidebar col-sm-3 col-md-3 col-lg-2 hidden-xs-down bg-faded z-index-2" >
   <ul class="nav nav-pills flex-column">
     <li class="nav-item" *ngFor="let page of pages">
       <a class="nav-link" [ngClass]="{'active': getCurrentRoute() === page.route }" [routerLink]="[page.route]">{{page.label}} <span class="sr-only">(current)</span></a>

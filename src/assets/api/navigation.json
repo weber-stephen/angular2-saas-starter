@@ -1,0 +1,14 @@
+[
+    {
+        "label":"Dashboard",
+        "route":"/"
+    },
+    {
+        "label":"Messages",
+        "route":"/messages"
+    },
+    {
+        "label":"Users",
+        "route":"/users"
+    }
+]

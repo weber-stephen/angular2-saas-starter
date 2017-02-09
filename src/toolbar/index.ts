@@ -1,9 +1,9 @@
 import { ToolbarComponent } from './toolbar.component';
 import { SearchAutocompleteComponent } from './search-autocomplete/search-autocomplete.component';
-// import { AUTOCOMPLETE_MODULE } from './search-autocomplete/autocomplete';
+import { ClickOutsideDirective } from './search-autocomplete/clickinside.directive';
 
 export const TOOLBAR_MODULE = [
     ToolbarComponent,
     SearchAutocompleteComponent,
-    // AUTOCOMPLETE_MODULE
+    ClickOutsideDirective
 ];

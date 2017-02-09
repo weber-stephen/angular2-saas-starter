@@ -13,12 +13,6 @@ import { AlertModule } from 'ng2-bootstrap';
 //Storage
 import { Ng2Webstorage } from 'ng2-webstorage';
 
-//Typeahead - https://github.com/brinkjg/ng2-typeahead
-// import { Typeahead } from 'ng2-typeahead';
-import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
-
-import { ClickOutsideDirective } from '../toolbar/search-autocomplete/clickinside.directive';
-
 //Utilities
 import * as _ from 'lodash';
 
@@ -49,7 +43,6 @@ const BIQ_MODULES = [
 @NgModule({
   declarations: [
     AppComponent,
-    ClickOutsideDirective,
     BIQ_MODULES
   ],
   imports: [
@@ -61,7 +54,6 @@ const BIQ_MODULES = [
 
     //Libraries
     Ng2Webstorage,
-    Ng2AutoCompleteModule,
     AlertModule.forRoot()
 
   ],

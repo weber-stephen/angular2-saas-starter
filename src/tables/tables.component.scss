@@ -1,0 +1,25 @@
+.table-component {
+
+    h1 {
+        margin: 0;
+    }
+
+    .table-card {
+        min-height: 500px;
+
+        .search-input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        ngx-datatable {
+            height: 100%;
+        }
+
+        .material {
+            box-shadow: none;
+        }
+
+    }
+
+}

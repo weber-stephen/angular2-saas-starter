@@ -10,5 +10,9 @@
     {
         "label":"Users",
         "route":"/users"
+    },
+    {
+        "label":"Tables",
+        "route":"/tables"
     }
 ]

@@ -64,7 +64,6 @@ export class SearchAutocompleteComponent implements OnInit, OnDestroy {
     }
 
     close() {
-        console.log('onClickOutside');
         this.showSuggestions = false;
     }
 

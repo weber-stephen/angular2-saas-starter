@@ -1,0 +1,37 @@
+<div class="table-component page p-20">
+    <div class="row"><h1>Tables</h1></div>
+
+    <div class="row">
+        <div class="col-12 card table-card">
+            <input
+                type='text'
+                class="search-input"
+                placeholder='Search...'
+                (keyup)='updateFilter($event)' />
+            <ngx-datatable
+                class='material'
+                [rows]='rows'
+                [columnMode]="'standard'"
+                [headerHeight]="50"
+                [footerHeight]="50"
+                [rowHeight]="50"
+                [scrollbarV]="true"
+                (page)="onPage($event)"
+                (activate)="onActivate($event)"
+                (select)='onSelect($event)'>
+                <ngx-datatable-column name="Name" width="200">
+                  <template let-value="value" ngx-datatable-cell-template>
+                    <strong>{{value}}</strong>
+                  </template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Gender" width="300">
+                  <template let-row="row" let-value="value" ngx-datatable-cell-template>
+                    <i [innerHTML]="row['name']"></i> and <i>{{value}}</i>
+                  </template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Age" width="80">
+                </ngx-datatable-column>
+              </ngx-datatable>
+        </div>
+    </div>
+</div>

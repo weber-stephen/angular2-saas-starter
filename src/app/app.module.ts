@@ -16,6 +16,9 @@ import { Ng2Webstorage } from 'ng2-webstorage';
 //Chartist - https://github.com/willsoto/angular2-chartist
 import { ChartistModule } from 'angular2-chartist';
 
+//Datatables - https://swimlane.gitbooks.io/ngx-datatable/
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 //Utilities
 import * as _ from 'lodash';
 
@@ -28,6 +31,7 @@ import { DASHBOARD_MODULE } from '../dashboard';
 import { MESSAGES_MODULE } from '../messages';
 import { USERS_MODULE } from '../users';
 import { SERVICES_MODULE } from '../services';
+import { TABLE_MODULE } from '../tables';
 import { PAGE_NOT_FOUND_MODULE } from '../pagenotfound';
 
 import { AuthGuard } from './auth-guard';
@@ -40,6 +44,7 @@ const BIQ_MODULES = [
   DASHBOARD_MODULE,
   MESSAGES_MODULE,
   USERS_MODULE,
+  TABLE_MODULE,
   PAGE_NOT_FOUND_MODULE
 ];
 
@@ -58,6 +63,7 @@ const BIQ_MODULES = [
     //Libraries
     Ng2Webstorage,
     ChartistModule,
+    NgxDatatableModule,
     AlertModule.forRoot()
 
   ],

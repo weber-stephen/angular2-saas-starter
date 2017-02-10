@@ -4,6 +4,7 @@ import { MessageService } from './message.service';
 import { NavigationService } from './navigation.service';
 import { SearchService } from './search.service';
 import { SalesService } from './sales.service';
+import { TableService } from './table.service';
 
 export const SERVICES_MODULE = [
     AuthenticationService,
@@ -11,5 +12,6 @@ export const SERVICES_MODULE = [
     MessageService,
     NavigationService,
     SearchService,
-    SalesService
+    SalesService,
+    TableService
 ];

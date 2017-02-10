@@ -13,6 +13,9 @@ import { AlertModule } from 'ng2-bootstrap';
 //Storage
 import { Ng2Webstorage } from 'ng2-webstorage';
 
+//Chartist - https://github.com/willsoto/angular2-chartist
+import { ChartistModule } from 'angular2-chartist';
+
 //Utilities
 import * as _ from 'lodash';
 
@@ -54,6 +57,7 @@ const BIQ_MODULES = [
 
     //Libraries
     Ng2Webstorage,
+    ChartistModule,
     AlertModule.forRoot()
 
   ],

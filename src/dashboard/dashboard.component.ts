@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { SalesChartComponent } from './saleschart/saleschart.component';
+
 @Component({
   selector: 'dashboard-component',
   templateUrl: './dashboard.component.html',

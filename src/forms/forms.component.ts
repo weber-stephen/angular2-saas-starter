@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 import { CustomValidators } from 'ng2-validation';
 
@@ -11,15 +10,14 @@ import { CustomValidators } from 'ng2-validation';
 })
 export class FormsComponent implements OnInit, OnDestroy {
     
-    loginForm: FormGroup;
-    error: string;
+    formExample: FormGroup;
 
-    constructor(private formBuilder: FormBuilder, private router:Router) {
+    constructor(private formBuilder: FormBuilder) {
         
     }
 
     ngOnInit() {
-        this.loginForm = this.formBuilder.group({
+        this.formExample = this.formBuilder.group({
           email: [
             '',
             Validators.required,
@@ -34,16 +32,14 @@ export class FormsComponent implements OnInit, OnDestroy {
             Validators.pattern('[A-Za-z]{5}')
            ]
         });
-
-        this.error = '';
     }
 
     submitForm() {
-      console.log(this.loginForm.value);
+      console.log(this.formExample.value);
     }
 
     ngOnDestroy() {
-      this.loginForm = null;
+      this.formExample = null;
     }
 
 }

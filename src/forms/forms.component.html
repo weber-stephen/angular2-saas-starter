@@ -5,26 +5,26 @@
       <h2>Example Form</h2>
       <p>For more layouts check <a href="https://v4-alpha.getbootstrap.com/components/forms/">Bootstrap 4 Docs</a> or for Angular2 Validation tutorial check <a href="https://scotch.io/tutorials/angular-2-form-validation">Scotch</a></p>
       
-      <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+      <form [formGroup]="formExample" (ngSubmit)="submitForm(formExample.value)">
 
-        <div class="form-group" [ngClass]="{'has-danger':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
+        <div class="form-group" [ngClass]="{'has-danger':!formExample.controls['email'].valid && formExample.controls['email'].touched}">
           <label for="emailInput">Email address</label>
-          <input type="email" required minlength="4" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email" [formControl]="loginForm.controls['email']" [ngClass]="{'form-control-danger':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
-          <div class="form-control-feedback" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">Please enter an email address</div>
-          <div class="form-control-feedback" *ngIf="loginForm.controls['email'].hasError('email') && loginForm.controls['email'].touched">Please enter a valid email address</div>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. {{loginForm.controls['email'].valid}}</small>
+          <input type="email" required minlength="4" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email" [formControl]="formExample.controls['email']" [ngClass]="{'form-control-danger':!formExample.controls['email'].valid && formExample.controls['email'].touched}">
+          <div class="form-control-feedback" *ngIf="formExample.controls['email'].hasError('required') && formExample.controls['email'].touched">Please enter an email address</div>
+          <div class="form-control-feedback" *ngIf="formExample.controls['email'].hasError('email') && formExample.controls['email'].touched">Please enter a valid email address</div>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. {{formExample.controls['email'].valid}}</small>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-danger':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+        <div class="form-group" [ngClass]="{'has-danger':!formExample.controls['password'].valid && formExample.controls['password'].touched}">
           <label for="passwordInput">Password</label>
-          <input type="password" class="form-control" id="passwordInput" placeholder="Password" [formControl]="loginForm.controls['password']" [ngClass]="{'form-control-danger':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
-          <div class="form-control-feedback" *ngIf="loginForm.controls['email'].hasError('min') && loginForm.controls['email'].touched">Your password must be more than 6 characters in length</div>
+          <input type="password" class="form-control" id="passwordInput" placeholder="Password" [formControl]="formExample.controls['password']" [ngClass]="{'form-control-danger':!formExample.controls['password'].valid && formExample.controls['password'].touched}">
+          <div class="form-control-feedback" *ngIf="formExample.controls['email'].hasError('min') && formExample.controls['email'].touched">Your password must be more than 6 characters in length</div>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-danger':!loginForm.controls['zip'].valid && loginForm.controls['zip'].touched}">
+        <div class="form-group" [ngClass]="{'has-danger':!formExample.controls['zip'].valid && formExample.controls['zip'].touched}">
           <label for="zipInput">Zip</label>
-          <input type="text" class="form-control" id="zipInput" placeholder="Zip" pattern="[A-Za-z]{5}" [formControl]="loginForm.controls['zip']" [formControl]="loginForm.controls['zip']" [ngClass]="{'form-control-danger':!loginForm.controls['zip'].valid && loginForm.controls['zip'].touched}">
-          <div class="form-control-feedback" *ngIf="loginForm.controls['zip'].hasError('pattern') && loginForm.controls['zip'].touched">Your zip must be a valid zip</div>
+          <input type="text" class="form-control" id="zipInput" placeholder="Zip" pattern="[A-Za-z]{5}" [formControl]="formExample.controls['zip']" [formControl]="formExample.controls['zip']" [ngClass]="{'form-control-danger':!formExample.controls['zip'].valid && formExample.controls['zip'].touched}">
+          <div class="form-control-feedback" *ngIf="formExample.controls['zip'].hasError('pattern') && formExample.controls['zip'].touched">Your zip must be a valid zip</div>
         </div>
 
         <div class="form-group">
@@ -83,7 +83,7 @@
             Check me out
           </label>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!formExample.valid">Submit</button>
       </form>
     </div>
   </div>

@@ -1,17 +1,28 @@
-<div class="login-component">
+<div class="signup-component">
+  <div class="container">
+    <div class="card z-index-3">
+      <div class="logo"><img src="assets/img/Logo_Web_151x131.png"></div>
 
-  <form class="form-signin">
-    <h2 class="form-signin-heading">Signup</h2>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm.value)">
+
+        <div class="form-group" [ngClass]="{'has-danger':!signupForm.controls['email'].valid && signupForm.controls['email'].touched}">
+          <label for="emailInput">Email address</label>
+          <input type="email" required class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email" [formControl]="signupForm.controls['email']" [ngClass]="{'form-control-danger':!signupForm.controls['email'].valid && signupForm.controls['email'].touched}">
+          <div class="form-control-feedback" *ngIf="signupForm.controls['email'].hasError('required') && signupForm.controls['email'].touched">Please enter an email address</div>
+          <div class="form-control-feedback" *ngIf="signupForm.controls['email'].hasError('email') && signupForm.controls['email'].touched">Please enter a valid email address</div>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. {{signupForm.controls['email'].valid}}</small>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-danger':!signupForm.controls['password'].valid && signupForm.controls['password'].touched}">
+          <label for="passwordInput">Password</label>
+          <input type="password" class="form-control" id="passwordInput" placeholder="Password" [formControl]="signupForm.controls['password']" [ngClass]="{'form-control-danger':!signupForm.controls['password'].valid && signupForm.controls['password'].touched}">
+          <div class="form-control-feedback" *ngIf="signupForm.controls['email'].hasError('min') && signupForm.controls['email'].touched">Your password must be more than 6 characters in length</div>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!signupForm.valid">Submit</button>
+
+      </form>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
-
+    <div class="login-link"><a [routerLink]="'/login'">Current User</a></div>
+  </div>
 </div>

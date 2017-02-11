@@ -29,3 +29,21 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Known Issues
+
+If you get "ERROR in ChartistModule is not an NgModule" after running "ng serve", just save any file in your project and it will recompile without errors - seems to be a known bug with angular-cli [BUG REPORT](https://github.com/angular/angular-cli/issues/3426)
+
+## Libraries Used
+
+##Bootstrap
+[Documentation](https://valor-software.com/ng2-bootstrap/)
+
+###Datatables
+[Documentation](https://swimlane.gitbooks.io/ngx-datatable/)
+
+###Chartist
+[Documentation](https://github.com/willsoto/angular2-chartist)
+
+##NG2 Webstorage
+[Documentation](https://github.com/PillowPillow/ng2-webstorage)

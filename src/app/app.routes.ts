@@ -6,6 +6,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { MessagesComponent } from '../messages/messages.component';
 import { UsersComponent } from '../users/users.component';
 import { TablesComponent } from '../tables/tables.component';
+import { FormsComponent } from '../forms/forms.component';
 import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
 
 import { AuthGuard } from './auth-guard';
@@ -18,6 +19,7 @@ export const APP_ROUTES:Routes = [
   { path: 'messages',component: MessagesComponent, canActivate: [AuthGuard] },
   { path: 'users',component: UsersComponent, canActivate: [AuthGuard] },
   { path: 'tables',component: TablesComponent, canActivate: [AuthGuard] },
+  { path: 'forms',component: FormsComponent, canActivate: [AuthGuard] },
   
   { path: '**', component: PageNotFoundComponent }
 ];

@@ -14,5 +14,9 @@
     {
         "label":"Tables",
         "route":"/tables"
+    },
+    {
+        "label":"Forms",
+        "route":"/forms"
     }
 ]

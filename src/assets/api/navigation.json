@@ -18,5 +18,9 @@
     {
         "label":"Forms",
         "route":"/forms"
+    },
+    {
+        "label":"Wizard",
+        "route":"/wizard"
     }
 ]

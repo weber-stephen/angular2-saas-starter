@@ -1,0 +1,103 @@
+<div class="wizard-component">
+
+  <h1>Wizard</h1>
+  
+  <div class="container wizard-wrapper card wizard-card w-actions" *ngIf="currentStepIndex > -1">
+
+    <div class="bs-wizard">
+      <div class="row">
+
+        <div class="col-xs-12 col-md-4 bs-wizard-step {{step.status}}" *ngFor="let step of steps">
+          <div class="text-center bs-wizard-stepnum">{{step.label}}</div>
+          <div class="progress">
+            <div class="progress-bar"></div>
+          </div>
+          <a href="#" class="bs-wizard-dot"></a>
+          <div class="bs-wizard-info text-center">{{step.label}}</div>
+        </div>
+
+      </div>
+
+      <div class="form-container">
+        <div class="wizard-form">
+
+          <!-- START Create User Form -->
+          <form [formGroup]="steps[0].form" *ngIf="currentStepIndex === 0">
+
+            <p class="instructions">Let's create a user! Just fill out this form and click "Next" to move to the next step.</p>
+
+            <div class="form-group" [ngClass]="{'has-danger':!steps[0].form.controls['first_name'].valid && steps[0].form.controls['first_name'].touched}">
+              <label for="emailInput">First Name</label>
+              <input type="text" required minlength="4" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="First Name" [formControl]="steps[0].form.controls['first_name']" [ngClass]="{'form-control-danger':!steps[0].form.controls['first_name'].valid && steps[0].form.controls['first_name'].touched}">
+              <div class="form-control-feedback" *ngIf="steps[0].form.controls['first_name'].hasError('required') && steps[0].form.controls['first_name'].touched">Please enter your first name</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-danger':!steps[0].form.controls['last_name'].valid && steps[0].form.controls['last_name'].touched}">
+              <label for="emailInput">Last Name</label>
+              <input type="text" required minlength="4" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Last Name" [formControl]="steps[0].form.controls['last_name']" [ngClass]="{'form-control-danger':!steps[0].form.controls['last_name'].valid && steps[0].form.controls['last_name'].touched}">
+              <div class="form-control-feedback" *ngIf="steps[0].form.controls['last_name'].hasError('required') && steps[0].form.controls['last_name'].touched">Please enter your first name</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-danger':!steps[0].form.controls['email'].valid && steps[0].form.controls['email'].touched}">
+              <label for="emailInput">Email</label>
+              <input type="email" required minlength="4" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email" [formControl]="steps[0].form.controls['email']" [ngClass]="{'form-control-danger':!steps[0].form.controls['email'].valid && steps[0].form.controls['email'].touched}">
+              <div class="form-control-feedback" *ngIf="steps[0].form.controls['email'].hasError('required') && steps[0].form.controls['email'].touched">Please enter an email address</div>
+              <div class="form-control-feedback" *ngIf="steps[0].form.controls['email'].hasError('email') && steps[0].form.controls['email'].touched">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-danger':!steps[0].form.controls['password'].valid && steps[0].form.controls['password'].touched}">
+              <label for="emailInput">Password</label>
+              <input type="password" required minlength="4" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Password" [formControl]="steps[0].form.controls['password']" [ngClass]="{'form-control-danger':!steps[0].form.controls['password'].valid && steps[0].form.controls['password'].touched}">
+              <div class="form-control-feedback" *ngIf="steps[0].form.controls['password'].hasError('required') && steps[0].form.controls['password'].touched">Please enter a password</div>
+            </div>
+
+          </form>
+          <!-- END Create User Form -->
+
+          <!-- START Set Role Form -->
+          <form [formGroup]="steps[1].form" *ngIf="currentStepIndex === 1">
+
+            <p class="instructions">What permissions or role would you like to set for this user?</p>
+
+            <div class="form-group">
+              <label for="roleSelect">Example select</label>
+              <select class="form-control" id="roleSelect" [formControl]="steps[1].form.controls['role']">
+                <option *ngFor="let role of roles">{{role.title}}</option>
+              </select>
+            </div>
+
+          </form>
+          <!-- END Set Role Form -->
+
+          <!-- START Set Role Form -->
+          <form [formGroup]="steps[2].form" *ngIf="currentStepIndex === 2">
+
+            <p class="instructions">Your Are All Done!<br>Click "Finish" to go back to the dashboard.</p>          
+
+            <div class="check-animation">
+              <svg width="98" height="98" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 98 98" style="enable-background:new 0 0 98 98;" xml:space="preserve">
+                <line class="line1" x1="32.6" y1="54.5" x2="45.8" y2="71.6"/>
+                <line class="line2" x1="72.4" y1="29.5" x2="46" y2="71.6"/>
+                <circle class="circle" cx="49.1" cy="49.1" r="47.1"/>
+              </svg>
+            </div>
+
+          </form>
+          <!-- END Set Role Form -->
+
+        </div>
+      </div>
+
+      <div class="card-actions row">
+        <div class="col-4" >
+          <button class="btn btn-lg btn-block" (click)="onBack($event)" [disabled]="currentStep === 0">Back</button>
+        </div>
+        <span class="col-4"></span>
+        <div class="col-4">
+          <button class="btn btn-lg btn-primary btn-block" (click)="onNext($event)" [disabled]="currentStep.form && !currentStep.form.valid" *ngIf="currentStepIndex != (steps.length-1)">Next</button>
+          <button class="btn btn-primary btn-block" (click)="onFinish($event)" *ngIf="currentStepIndex === (steps.length-1)">Finish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

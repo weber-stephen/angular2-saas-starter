@@ -5,6 +5,7 @@ import { NavigationService } from './navigation.service';
 import { SearchService } from './search.service';
 import { SalesService } from './sales.service';
 import { TableService } from './table.service';
+import { RolesService } from './roles.service';
 
 export const SERVICES_MODULE = [
     AuthenticationService,
@@ -13,5 +14,6 @@ export const SERVICES_MODULE = [
     NavigationService,
     SearchService,
     SalesService,
-    TableService
+    TableService,
+    RolesService
 ];

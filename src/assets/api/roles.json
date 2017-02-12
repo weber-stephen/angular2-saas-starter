@@ -1,0 +1,30 @@
+[
+   {
+      "id":2,
+      "title":"Admin",
+      "permissions":[
+
+      ]
+   },
+   {
+      "id":2,
+      "title":"Sales",
+      "permissions":[
+
+      ]
+   },
+   {
+      "id":3,
+      "title":"Marketing",
+      "permissions":[
+
+      ]
+   },
+   {
+      "id":4,
+      "title":"Intern",
+      "permissions":[
+
+      ]
+   }
+]

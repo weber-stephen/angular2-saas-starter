@@ -1,0 +1,150 @@
+.wizard-component {
+    $complete-color: #37B595;
+    $complete-inner-color: #1A7F75;
+    $active-color: $primary;
+    $active-inner-color: #3c6ba2;
+    $incomplete-color: #efefef;
+    $incomplete-inner-color: #A2ACAF;
+
+    .wizard-wrapper {
+
+        //https://codepen.io/sabibm/pen/Kdzqoz
+        .bs-wizard {
+            margin-top: 40px;
+            padding: 0 0 10px 0;
+
+            .wizard-form {
+              padding: 20px;
+              .instructions {
+                opacity: 0.75;
+                padding: 10px;
+                padding-top: 20px;
+                text-align: center;
+              }
+            }
+
+            .bs-wizard-step {
+              padding: 0;
+              position: relative;
+
+                .bs-wizard-stepnum {
+                  color: #595959;
+                  font-size: 16px;
+                  margin-bottom: 5px;
+                }
+
+                .bs-wizard-info {
+                  color: #999;
+                  font-size: 14px;
+                }
+
+                .bs-wizard-dot {
+                  position: absolute;
+                  width: 30px;
+                  height: 30px;
+                  display: block;
+                  background: $incomplete-color;
+                  top: 45px;
+                  left: 50%;
+                  margin-top: -15px;
+                  margin-left: -15px;
+                  border-radius: 50%;
+                  transition: .3s;
+                }
+
+                .bs-wizard-dot:before {
+                  opacity: 0;
+                  transition: 1s;
+                }
+
+                .bs-wizard-dot:after {
+                  content: ' ';
+                  width: 22px;
+                  height: 22px;
+                  background: $incomplete-inner-color;
+                  border-radius: 50px;
+                  position: absolute;
+                  top: 4px;
+                  left: 4px;
+                }
+
+                &.complete > .bs-wizard-dot {
+                    background: $complete-color;
+
+                    &:before {
+                        font: normal normal normal 14px/1 FontAwesome;
+                        content: "\F00C";
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        color: $complete-color;
+                        position: absolute;
+                        left: 8px;
+                        z-index: 10;
+                        top: 9px;
+                        opacity: 1;
+                        transition: 1s;
+                    }
+
+                    &:after {
+                        background: $complete-inner-color;
+                    }
+
+                }
+
+                &.active > .bs-wizard-dot {
+                    background: $active-color;
+
+                    &:after {
+                        background: $active-inner-color;
+                    }
+
+                }
+
+                .progress {
+                  position: relative;
+                  border-radius: 0px;
+                  height: 8px;
+                  box-shadow: none;
+                  margin: 18px 0;
+                }
+
+                .progress > .progress-bar {
+                  width: 0px;
+                  box-shadow: none;
+                  background: $complete-color;
+                }
+
+                &.complete > .progress > .progress-bar {
+                  width: 100%;
+                }
+
+                &.active > .progress > .progress-bar {
+                  width: 50%;
+                }
+
+                &:first-child.active > .progress > .progress-bar {
+                  width: 0%;
+                }
+
+                &:last-child.active > .progress > .progress-bar {
+                  width: 100%;
+                }
+
+                &:first-child > .progress {
+                  left: 50%;
+                  width: 50%;
+                }
+
+                &:last-child > .progress {
+                  width: 50%;
+                }
+
+                a.bs-wizard-dot {
+                  pointer-events: none;
+                }
+            }
+
+        }
+
+    }
+}

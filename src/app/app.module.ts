@@ -36,6 +36,7 @@ import { USERS_MODULE } from '../users';
 import { SERVICES_MODULE } from '../services';
 import { TABLE_MODULE } from '../tables';
 import { FORMS_MODULE } from '../forms';
+import { WIZARD_MODULE } from '../wizard';
 import { PAGE_NOT_FOUND_MODULE } from '../pagenotfound';
 
 import { AuthGuard } from './auth-guard';
@@ -50,6 +51,7 @@ const BIQ_MODULES = [
   USERS_MODULE,
   TABLE_MODULE,
   FORMS_MODULE,
+  WIZARD_MODULE,
   PAGE_NOT_FOUND_MODULE
 ];
 

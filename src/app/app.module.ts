@@ -20,7 +20,7 @@ import { ChartistModule } from 'angular2-chartist';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 //NG2 Validators - https://github.com/yuyang041060120/ng2-validation
-import { CustomFormsModule } from 'ng2-validation'
+import { CustomFormsModule } from 'ng2-validation';
 
 //Utilities
 import * as _ from 'lodash';

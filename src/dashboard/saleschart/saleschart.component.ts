@@ -37,9 +37,9 @@ export class SalesChartComponent {
       },
       scaleMinSpace:50,
       chartPadding: {
-          left:10,
+          left:20,
           right:50,
-          top:40
+          top:60
       }
     };
   }

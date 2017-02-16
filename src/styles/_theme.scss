@@ -1,0 +1,79 @@
+$primary: #5093e1;
+$success: #51c14f;
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+// Start with assigning color names to specific hex values.
+$white:  #fff;
+$black:  #000;
+$red:    #d9534f;
+$orange: #f0ad4e;
+$yellow: #ffd500;
+$green:  $success;
+$blue:   $primary;
+$teal:   #5bc0de;
+$pink:   #f65177;
+$purple: #613d7c;
+
+// Create grayscale
+$gray-dark:                 #292b2c;
+$gray:                      #464a4c;
+$gray-light:                #636c72;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
+
+// Reassign color vars to semantic color scheme
+$brand-primary:             $blue;
+$brand-secondary:           $pink;
+$brand-success:             $green;
+$brand-info:                $teal;
+$brand-warning:             $orange;
+$brand-danger:              $red;
+$brand-inverse:             $gray-dark;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:       #edeff5;
+$body-color:    $gray-dark;
+$inverse-bg:    $gray-dark;
+$inverse-color: $gray-lighter;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:            $brand-primary;
+$link-decoration:       none;
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$navigation-color: #2f323a;
+$off-white-color: #cecece;

@@ -41,7 +41,7 @@ import { PAGE_NOT_FOUND_MODULE } from '../pagenotfound';
 
 import { AuthGuard } from './auth-guard';
 
-const BIQ_MODULES = [
+const APP_MODULES = [
   NAVIGATION_MODULE,
   TOOLBAR_MODULE,
   LOGIN_MODULE,
@@ -58,7 +58,7 @@ const BIQ_MODULES = [
 @NgModule({
   declarations: [
     AppComponent,
-    BIQ_MODULES
+    APP_MODULES
   ],
   imports: [
     BrowserModule,

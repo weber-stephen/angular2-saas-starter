@@ -1,12 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { ChartType } from 'angular2-chartist';
-
-import * as Chartist from 'chartist';
-
-declare var require: any;
-
 import * as _ from 'lodash';
+
+import { SalesService } from '../../../services/sales.service';
 
 @Component({
     selector: 'social-facebook-chart',
@@ -14,45 +10,66 @@ import * as _ from 'lodash';
     styleUrls: ['./social-facebook-chart.component.scss']
 })
 export class SocialFacebookChartComponent implements OnInit, OnDestroy {
-    
-    data: Chartist.IChartistData;
-    type: ChartType;
-    options: any;
 
-    constructor() {
+  
+    // lineChart
+    public lineChartData:Array<any> = [
+      {data: [], label: 'Facebook'}
+    ];
+    public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    public lineChartOptions:any = {
+      responsive: true,
+      padding:0,
+      legend: {
+        display: false,
+        fontColor:"white"
+      },
+      tooltips: {
+        enabled: false
+      },
+      scales: { 
+        yAxes: [{
+            ticks: {
+                fontColor: "white"
+            }
+        }],
+        xAxes: [{
+            ticks: {
+                fontColor: "white"
+            }
+        }]
+      }
+    };
+    public lineChartColors:Array<any> = [
+      {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        borderColor: 'rgba(255, 255, 255, 1)',
+        pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(255, 255, 255, 0.8)',
+      }
+    ];
+    public lineChartLegend:boolean = true;
+    public lineChartType:string = 'line';
 
+    constructor(private salesService:SalesService) {
+      this.salesService.getSocial().then((result) => {
+        this.lineChartData = result;
+      });
     }
 
     ngOnInit() {
-      this.data = {
-        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-        "series":[this.getSocialChartData(20,40,6)]
-      }
-      this.type = 'Line';
-      this.options = {
-        showArea:false,
-        low:0,
-        fullWidth:true,
-        chartPadding: {
-            left:10,
-            right:30,
-            top:30
-        }
-      };
-    }
-
-    ngAfterViewInit() {
       
     }
-
-    getSocialChartData(a,b,c) {
-
-      var _return = [];
-      for (var i = 0; i < c; i++) {
-          _return.push(_.random(a,b));
-      }
-      return _return;
-
+   
+    // events
+    public chartClicked(e:any):void {
+      console.log(e);
+    }
+   
+    public chartHovered(e:any):void {
+      console.log(e);
     }
 
     ngOnDestroy() {

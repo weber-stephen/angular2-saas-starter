@@ -3,6 +3,8 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
 
+import { User } from '../models/user.model';
+
 @Injectable()
 export class RolesService {
     constructor(private http: Http, private storage:LocalStorageService) { }

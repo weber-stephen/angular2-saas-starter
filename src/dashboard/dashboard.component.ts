@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SalesChartComponent } from './saleschart/saleschart.component';
-import { SocialFacebookChartComponent } from './social/facebook/social-facebook-chart.component';
-import { SocialTwitterChartComponent } from './social/facebook/social-twitter-chart.component';
+// import { SocialFacebookChartComponent } from './social/facebook/social-facebook-chart.component';
+// import { SocialTwitterChartComponent } from './social/facebook/social-twitter-chart.component';
 
 @Component({
   selector: 'dashboard-component',

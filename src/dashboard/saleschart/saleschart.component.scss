@@ -1,11 +1,14 @@
 .saleschart-component {
-    height: 300px;
     width: 100%;
 
     h2 {
         position: absolute;
         top: 10px;
         left: 20px;
+    }
+
+    .chart {
+        padding-top: 30px;
     }
 
 }

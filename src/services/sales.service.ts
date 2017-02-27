@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
-
-import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
 
 @Injectable()
 export class SalesService {
 
-    constructor(private http: Http, private storage:LocalStorageService) { }
+    public lineChartData:Array<any> = [
+        {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+        {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+    ];
 
-    get() {
-        return this.http.get('/assets/api/sales.json', this.jwt()).map((response: Response) => response.json()).toPromise();
+    constructor() { }
+
+    get():Promise<any> {
+        return Promise.resolve(this.lineChartData);
     }
 
-    // private helper methods
-    private jwt() {
-        // create authorization header with jwt token
-        let currentUser = this.storage.retrieve('currentUser');
-        if (currentUser && currentUser.token) {
-            let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-            return new RequestOptions({ headers: headers });
-        }
+    getSocial():Promise<any> {
+        return Promise.resolve(
+            [
+                {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'}
+            ]
+        );
     }
+    
 }

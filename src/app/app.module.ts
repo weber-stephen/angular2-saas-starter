@@ -13,8 +13,8 @@ import { AlertModule } from 'ng2-bootstrap';
 //Storage - https://github.com/PillowPillow/ng2-webstorage
 import { Ng2Webstorage } from 'ng2-webstorage';
 
-//Chartist - https://github.com/willsoto/angular2-chartist
-import { ChartistModule } from 'angular2-chartist';
+//ng2-charts - http://valor-software.com/ng2-charts/
+import { ChartsModule } from 'ng2-charts';
 
 //Datatables - https://swimlane.gitbooks.io/ngx-datatable/
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -69,7 +69,7 @@ const APP_MODULES = [
 
     //Libraries
     Ng2Webstorage,
-    ChartistModule,
+    ChartsModule,
     NgxDatatableModule,
     CustomFormsModule,
     AlertModule.forRoot()

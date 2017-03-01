@@ -20,6 +20,10 @@
         "route":"/forms"
     },
     {
+        "label":"Modal",
+        "route":"/modals"
+    },
+    {
         "label":"Wizard",
         "route":"/wizard"
     }

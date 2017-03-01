@@ -7,6 +7,7 @@ import { MessagesComponent } from '../messages/messages.component';
 import { UsersComponent } from '../users/users.component';
 import { TablesComponent } from '../tables/tables.component';
 import { FormsComponent } from '../forms/forms.component';
+import { ModalsComponent } from '../modals/modals.component';
 import { WizardComponent } from '../wizard/wizard.component';
 import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
 
@@ -21,6 +22,7 @@ export const APP_ROUTES:Routes = [
   { path: 'users',component: UsersComponent, canActivate: [AuthGuard] },
   { path: 'tables',component: TablesComponent, canActivate: [AuthGuard] },
   { path: 'forms',component: FormsComponent, canActivate: [AuthGuard] },
+  { path: 'modals',component: ModalsComponent, canActivate: [AuthGuard] },
   { path: 'wizard',component: WizardComponent, canActivate: [AuthGuard] },
   
   { path: '**', component: PageNotFoundComponent }

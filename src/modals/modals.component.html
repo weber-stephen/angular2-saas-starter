@@ -1,0 +1,40 @@
+<div class="modals-component">
+	
+	<p>Data to show in modal and what is going to be passed back to this page:</p>
+	<form >
+
+    <div class="form-group" >
+      <label for="modalTitleInput">Modal Title</label>
+      <input type="text" class="form-control" name="modalTitle" [(ngModel)]="dataGoingToDialog.title" id="modalTitleInput" placeholder="Modal Title" >
+    </div>
+    <div class="form-group" >
+      <label for="modalBodyInput">Modal Body</label>
+      <textarea class="form-control" name="modalBody" [(ngModel)]="dataGoingToDialog.body" id="modalBodyInput" placeholder="Modal Body" ></textarea>
+    </div>
+
+  </form>
+
+	<button class="btn primary" (click)="onShowModal(dataGoingToDialog)">Show Dialog</button>
+
+	<div class="pt-20" *ngIf="dataFromDialog">
+		<p>Data from dialog passed back to this page after close:</p>
+		<form>
+
+	    <div class="form-group" >
+	      <label for="fromModalTitleInput">Modal Title</label>
+	      <input type="text" class="form-control" name="modalTitle" [(ngModel)]="dataFromDialog.title" id="fromModalTitleInput" placeholder="Modal Title" >
+	    </div>
+	    <div class="form-group" >
+	      <label for="modalBodyInput">Modal Body</label>
+	      <textarea class="form-control" name="fromModalBodyInput" [(ngModel)]="dataFromDialog.body" id="fromModalBodyInput" placeholder="Modal Body" ></textarea>
+	    </div>
+
+	  </form>
+  </div>
+
+	<dynamic-modal-component 
+		#c="child" 
+		(clickEvent)="onModalClickEvent($event)">
+	</dynamic-modal-component>
+
+</div>

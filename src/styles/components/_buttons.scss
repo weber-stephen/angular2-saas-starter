@@ -2,8 +2,9 @@
     border-radius: 25px;
 }
 
-.btn-primary {
-    background-color: $primary;
+.btn-primary, .primary {
+	color: #fff;
+  background-color: $primary;
 }
 
 .btn.full {

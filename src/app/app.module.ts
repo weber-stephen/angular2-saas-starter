@@ -9,6 +9,7 @@ import { APP_ROUTES } from './app.routes';
 
 //Bootstrap - https://valor-software.com/ng2-bootstrap/
 import { AlertModule } from 'ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap';
 
 //Storage - https://github.com/PillowPillow/ng2-webstorage
 import { Ng2Webstorage } from 'ng2-webstorage';
@@ -36,6 +37,7 @@ import { USERS_MODULE } from '../users';
 import { SERVICES_MODULE } from '../services';
 import { TABLE_MODULE } from '../tables';
 import { FORMS_MODULE } from '../forms';
+import { MODALS_MODULE } from '../modals';
 import { WIZARD_MODULE } from '../wizard';
 import { PAGE_NOT_FOUND_MODULE } from '../pagenotfound';
 
@@ -51,6 +53,7 @@ const APP_MODULES = [
   USERS_MODULE,
   TABLE_MODULE,
   FORMS_MODULE,
+  MODALS_MODULE,
   WIZARD_MODULE,
   PAGE_NOT_FOUND_MODULE
 ];
@@ -72,7 +75,8 @@ const APP_MODULES = [
     ChartsModule,
     NgxDatatableModule,
     CustomFormsModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ModalModule.forRoot()
 
   ],
   providers: [

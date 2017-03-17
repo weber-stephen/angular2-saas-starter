@@ -11,7 +11,7 @@ export class SearchService {
     constructor(private http: Http, private storage:LocalStorageService) { }
 
     get(searchTerm) {
-        return this.http.get('/assets/api/navigation.json', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('./assets/api/navigation.json', this.jwt()).map((response: Response) => response.json());
     }
 
     // private helper methods

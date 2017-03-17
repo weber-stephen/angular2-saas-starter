@@ -9,7 +9,7 @@ export class NavigationService {
     constructor(private http: Http, private storage:LocalStorageService) { }
 
     get() {
-        return this.http.get('/assets/api/navigation.json', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('./assets/api/navigation.json', this.jwt()).map((response: Response) => response.json());
     }
 
     // private helper methods

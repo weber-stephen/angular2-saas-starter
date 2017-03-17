@@ -11,7 +11,7 @@ export class MessageService {
     constructor(private http: Http, private storage:LocalStorageService) { }
 
     getAll() {
-        return this.http.get('/assets/api/messages.json', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('./assets/api/messages.json', this.jwt()).map((response: Response) => response.json());
     }
 
     // private helper methods

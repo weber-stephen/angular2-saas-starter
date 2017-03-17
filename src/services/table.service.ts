@@ -9,7 +9,7 @@ export class TableService {
     constructor(private http: Http, private storage:LocalStorageService) { }
 
     get() {
-        return this.http.get('/assets/api/largedata.json', this.jwt()).map((response: Response) => response.json()).toPromise();
+        return this.http.get('./assets/api/largedata.json', this.jwt()).map((response: Response) => response.json()).toPromise();
     }
 
     // private helper methods

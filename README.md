@@ -31,10 +31,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 If you get "ERROR in ChartistModule is not an NgModule" after running "ng serve", just save any file in your project and it will recompile without errors - seems to be a known bug with angular-cli [BUG REPORT](https://github.com/angular/angular-cli/issues/3426)
 
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
 ## Libraries Used
 
 ##Bootstrap
